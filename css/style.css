@@ -20,7 +20,14 @@ GLOBAL STYLES
     scroll-behavior: smooth;
     /* Smooth scroll when clicking links */
 }
-
+body{
+    display: grid;
+    grid-template-areas:
+        "header"
+        "main"
+        "footer";
+    grid-template-rows: auto 1fr auto;
+}
 /*  
 =========================================================
 HEADER SECTION (Navigation Bar)
@@ -73,21 +80,13 @@ header nav ul li a {
 }
 
 /* Title Fonts */
-h1,
-h2 {
+h1,h2 {
     font-family: 'Uncial Antiqua', cursive;
 }
 
 
 
-body{
-    display: grid;
-    grid-template-areas:
-        "header"
-        "main"
-        "footer";
-    grid-template-rows: auto 1fr auto;
-}
+
 main {
     grid-area: main;
     display: flex;
@@ -262,18 +261,6 @@ INTRO TEXT WITH IMAGE-CLIP EFFECT
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
 }
 
-/*  
-=========================================================
-FOOTER
-=========================================================
-*/
-footer {
-    grid-area: footer;
-    background: #222;
-    color: #fff;
-    text-align: center;
-    padding: 15px;
-}
 
 /*  
 =========================================================
@@ -826,32 +813,13 @@ EVENT SECTION
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
 }
 
-/*  
+
+
+/* 
 =========================================================
-INTRO TEXT WITH IMAGE-CLIP EFFECT
-=========================================================
+FOOTER STYLES
+========================================================= 
 */
-.in1 {
-    width: 90%;
-    height: 200px;
-    background: white;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    background-size: cover;
-    background-image: url("../img/red.jpeg");
-    -webkit-text-fill-color: transparent;
-    /* Text becomes empty */
-    -webkit-background-clip: text;
-    /* Image fills the text */
-}
-
-/* Big heading with image clip */
-
-
-/* footer-style */
 footer {
     grid-area: footer;
     background: #1a1a1a;
