@@ -1,0 +1,927 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/*  
+=========================================================
+GLOBAL STYLES
+=========================================================
+*/
+
+/* declare color */
+
+* {
+    box-sizing: border-box;
+    /* Makes width/height include padding + border */
+    margin: 0;
+    /* Removes default browser margin */
+    padding: 0;
+    /* Removes default browser padding */
+    font-family: 'Arial', sans-serif;
+    /* Sets default font */
+    scroll-behavior: smooth;
+    /* Smooth scroll when clicking links */
+}
+
+/*  
+=========================================================
+HEADER SECTION (Navigation Bar)
+=========================================================
+*/
+header {
+    grid-area: header;
+    color: white;
+    margin: auto;
+    width: 100%;
+    padding: 10px 20px;
+
+    position: fixed;
+    /* Navbar always stays on top while scrolling */
+    top: 0;
+    z-index: 1000;
+    /* Makes sure header is above everything */
+
+    display: flex;
+    justify-content: space-between;
+    /* Logo left, menu right */
+    align-items: center;
+
+    background: rgba(255, 254, 254, 0.094);
+    /* Transparent background */
+    backdrop-filter: blur(5px);
+    /* Glass effect */
+    -webkit-backdrop-filter: blur(15px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    overflow: auto;
+    /* Soft shadow */
+}
+
+/* Navigation Menu */
+header nav ul {
+    display: flex;
+    gap: 20px;
+    padding: 0px 20px;
+    list-style: none;
+    /* Removes bullets */
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: white;
+    text-shadow: #222 2px 2px 4px;
+    /* Glow text */
+    font-weight: bold;
+    font-size: clamp(0.5rem, 2vw, 1.5rem);
+}
+
+/* Title Fonts */
+h1,
+h2 {
+    font-family: 'Uncial Antiqua', cursive;
+}
+
+
+
+body{
+    display: grid;
+    grid-template-areas:
+        "header"
+        "main"
+        "footer";
+    grid-template-rows: auto 1fr auto;
+}
+main {
+    grid-area: main;
+    display: flex;
+    flex-direction: column;
+}
+/*  
+=========================================================
+HOME SECTION
+=========================================================
+*/
+#Home {
+    width: 100%;
+    height: 100vh;
+    
+    order: 1; /* Full screen */
+}
+
+/* Logo size */
+#logo {
+    width: 5%;
+    max-width: 100px;
+    height: auto;
+}
+
+#logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* keeps the image nice */
+    border-radius: 10px;
+    /* optional */
+    display: block;
+}
+
+/* Background image with parallax scroll */
+.home-container {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(65, 59, 51);
+    background-image: url('../img/2.jpg');
+    background-size: cover;
+    /* Fully covers the screen */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    /* Parallax effect */
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+}
+
+/*  
+=========================================================
+INTRO TEXT WITH IMAGE-CLIP EFFECT
+=========================================================
+*/
+.in1 {
+    width: 90%;
+    height: 200px;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-image: url("../img/red.jpeg");
+    -webkit-text-fill-color: transparent;
+    /* Text becomes empty */
+    -webkit-background-clip: text;
+    /* Image fills the text */
+}
+
+/* Big heading with image clip */
+.in1 h2 {
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: clamp(2rem, 6vw, 8rem);
+    /* responsive text */
+    letter-spacing: clamp(0.5rem, 6vw, 8rem);
+    /* responsive spacing */
+    text-shadow: #8B4513;
+}
+
+
+/* Center text group */
+.text-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 80%;
+    text-align: center;
+    color: #fff4f4;
+    padding: 15px;
+}
+
+.text-group p {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.text-group p:nth-child(2) {
+    font-size: 1.5rem;
+    font-weight: bolder;
+}
+
+/* Buttons and card groups */
+.btn-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: clamp(20px, 2vw, 50px);
+}
+
+.btn-group .btn-card {
+    display: flex;
+    gap: clamp(10px, 20vw, 80px);
+}
+
+.btn-group .btn-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: clamp(10px, 4vw, 80px);
+}
+
+.btn-group .btn-card img {
+    width: clamp(90px, 10vw, 300px);
+    height: clamp(90px, 10vw, 300px);
+    box-shadow: 18px 15px 29px 1px rgba(61, 55, 55, 0.75);
+    height: auto;
+    border-radius: 15px;
+    object-fit: cover;
+}
+
+/* Slight scale difference for left and right */
+.btn-group .btn-card img:nth-child(1) {
+    scale: 0.9;
+}
+
+.btn-group .btn-card img:nth-child(3) {
+    scale: 0.9;
+}
+
+/* Buttons */
+.btn-group .btn {
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: clamp(0.8rem, 1vw, 1.2rem);
+    padding: clamp(8px, 1vw, 15px) clamp(15px, 2vw, 30px);
+    font-weight: bold;
+    color: #F5F5DC;
+
+    background: rgba(255, 255, 255, 0.143);
+    backdrop-filter: blur(1.5px);
+    -webkit-backdrop-filter: blur(15px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.085);
+    transition: 0.3s;
+}
+
+.btn-group .btn:hover {
+    background: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+}
+
+/*  
+=========================================================
+FOOTER
+=========================================================
+*/
+footer {
+    grid-area: footer;
+    background: #222;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+}
+
+/*  
+=========================================================
+MATERIAL SECTION
+=========================================================
+*/
+.materil {
+    background-color: black;
+    background-repeat: no-repeat;
+    box-shadow: 0px 293px 234px 200px rgba(0,0,0,1); 
+    height: 100vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 20;
+    order: 2;
+}
+
+/* Text area */
+.materil .group-m{
+    text-align: center;
+    color: #F5F5DC;
+    width: 50%;
+    background-image: url(/img/bb1.png);
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.materil .group-m img{
+    width: 25rem;
+    
+}
+.materil .group-m h2 {
+    font-size: 5rem;
+}
+.materil .group-m p{
+    text-align: justify;
+    font-size: 1.5rem;
+}
+
+.image-card {
+    width: 40%;
+    max-width: 600px;
+    height: auto;
+}
+
+/* Material image */
+.materil .image-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* keeps the image nice */
+    border-radius: 10px;
+    /* optional */
+}
+
+.materil img {
+    width: 600px;
+    height: auto;
+    display: block;
+}
+
+
+/*  
+=========================================================
+TEXT DECORATION SECTION
+=========================================================
+*/
+
+.text-d {
+    background: black;
+    color: white;
+    height: 280px;
+    display: flex;
+    flex-direction: column;
+    z-index: 25;
+    order: 3;
+    
+  
+}
+.text-d h5 {
+    margin-top: 4rem;
+    margin-left: 5.5rem;
+    margin-bottom: 5rem;
+    font-weight: bold;
+    font-size: 2rem;
+}
+.time {
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.timeline-container {
+    display: flex;
+    justify-content: space-between; /* Distribute items evenly */
+    align-items: flex-start; /* Align bars at the same top level */
+    width: 800px; /* Adjust total width as needed */
+    position: relative; /* For potential future global line elements */
+    padding: 20px 0; /* Vertical padding to give space for markers */
+}
+
+.timeline-item {
+    display: flex;
+    flex-direction: column; /* Stack bar and marker */
+    align-items: center; /* Center marker and bar horizontally */
+    position: relative; /* Crucial for positioning markers absolutely within */
+    flex: 1; /* Allow items to grow and shrink evenly */
+    padding: 0 10px; /* Space between segments */
+}
+
+.bar {
+    width: 100%; /* Take full width of its timeline-item */
+    height: 25px; /* Height of the horizontal bar */
+    background-color: white;
+    z-index: 1; /* Ensure bar is behind markers visually */
+    border-radius: 3px;
+}
+
+.marker {
+    width: 50px;
+    height: 50px;
+    background-color: #333;
+    border-radius: 50%; /* Make it a circle */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    font-size: 1em;
+    position: absolute; /* Position markers absolutely */
+    z-index: 2; /* Ensure markers are above bars */
+    left: 50%; /* Start at the horizontal center of the parent timeline-item */
+    transform: translateX(-50%); /* Adjust to truly center */
+}
+
+.marker-top {
+    /* Position above the bar. Adjust `bottom` to change distance from bar. */
+    bottom: calc(100% + 15px); /* 100% of bar height + 15px offset */
+}
+
+.marker-bottom {
+    /* Position below the bar. Adjust `top` to change distance from bar. */
+    top: calc(100% + 15px); /* 100% of bar height + 15px offset */
+}
+
+
+.text-d h3 {
+    margin-top: 20rem;
+    padding-left: 6rem;
+    text-align: left;
+    font-size: 2.5rem;
+
+}
+.text-d p {
+    margin-top: 2rem;
+    padding-left: 6rem;
+    text-align: left;
+    font-size: 1.5rem;
+
+}
+.text-d h4 {
+    margin-top: 0.5rem;
+    padding-left: 6rem;
+    font-size: 1.2rem;
+    text-align: left;
+    font-weight: 200;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    width: 25%;
+
+}
+.text-d .cli {
+    display: flex;
+    flex-direction: row;
+    padding-left: 6rem;
+    margin-top: 2rem;
+    gap: 30px;
+}
+.text-d .cli button {
+    border-radius: 1rem;
+    border-style: none;
+    color: #E8BCB9;
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 1.5rem;
+    background: linear-gradient(
+    to bottom, 
+    /* Start color with 30% opacity */
+    rgba(100, 50, 117, 0.3) 0%,   
+    /* End color with 30% opacity */
+    rgba(122, 66, 143, 0.3) 100%  
+  );
+    box-shadow: 9px 9px 29px 0px rgba(0,0,0,0.27);
+    text-shadow: 4px 4px 5px rgba(0,0,0,0.6);
+    
+    
+}
+.text-d .cli button:hover {
+    background: #210F37;
+}
+
+
+/*  
+=========================================================
+HERITAGE SECTION
+=========================================================
+*/
+.heritag {
+    width: 100%;
+    height: 100vh;
+    background-image: url(/img/w1.jpg);
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 10;
+    order: 4;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    /*
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    padding: 0px 50px;
+    color: #F5F5DC; */
+}
+
+.heritag img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.heritag-group{
+   
+    height: 900px;
+    padding: 10px 40px;
+    width: auto;
+    font-size: 1.5rem;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    
+}
+.heritag-group .box-p {
+    width: 110rem;
+    height: 500px;
+    background-color: gray;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-image: url("/img/w1.jpg");
+    -webkit-text-fill-color: transparent;
+    /* Text becomes empty */
+    -webkit-background-clip: text;
+}
+
+
+/* Big heading with image clip */
+.box-p h2 {
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: clamp(5rem, 3vw, 5rem);
+    /* responsive text */
+    letter-spacing: clamp(0.5rem, 1vw, 5rem);
+    /* responsive spacing */
+    text-shadow: #8B4513;
+}
+
+
+.heritag-group .box-p1 {
+    
+    width: 900px;
+    height: 900px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+
+    display: flex;
+    flex-direction: column; /* Stack header, grid, footer vertically */
+    /* Adjust as needed for overall size */
+    
+    padding: 20px;
+    
+    gap: 15px; /* Space between main sections */
+    /* For visualization */
+}
+
+.header-section {
+    text-align: center;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.magazine-title {
+    font-size: 3em;
+    margin: 0;
+    letter-spacing: 2px;
+}
+
+.magazine-city {
+    font-size: 1.2em;
+    margin-top: 5px;
+}
+
+/* Image Grid Container */
+.image-grid-container-flex {
+    display: flex;
+    justify-content: space-between; /* Space out the three main columns */
+    gap: 15px; /* Space between the grid columns */
+    flex-grow: 1; /* Allow grid to take available vertical space */
+}
+
+/* Individual Grid Columns */
+.grid-left-column,
+.grid-middle-column,
+.grid-right-column {
+    display: flex;
+    flex-direction: column; /* Stack items vertically within each column */
+    gap: 10px; /* Space between items within a column */
+}
+
+.grid-left-column {
+    flex: 1; /* Take up roughly 1/3 of the space, but adaptable */
+    max-width: 30%; /* Control max width */
+    align-items: flex-start;
+    margin-top: 2.7rem; /* Align text and images to the left */
+}
+
+.grid-middle-column {
+    flex: 1.5; /* Slightly larger to accommodate wider middle images */
+    max-width: 40%;
+}
+
+.grid-right-column {
+    flex: 1; /* Take up roughly 1/3 of the space, but adaptable */
+    max-width: 30%;
+    align-items: flex-end;
+    margin-top: 3rem; /* Align right column images to the right */
+}
+
+/* Text Block Placeholder */
+.text-block-placeholder {
+    color: white;
+    
+    padding: 10px;
+    border: 1px dashed #bbb;
+    font-size: 0.7em;
+    line-height: 1.4;
+    text-align: left;
+    height: 190px; /* Fixed height to match original */
+    width: 100%; /* Ensure it takes full width of its column */
+    box-sizing: border-box; /* Include padding in height/width */
+    margin-bottom: 10px; /* Space below text block */
+}
+.text-block-placeholder p {
+    margin: 0;
+}
+
+
+/* Generic Grid Item Styling */
+.grid-item {
+    
+    background-color: #e0e0e0; /* Placeholder background for images */
+    border: 1px solid #ccc;
+    display: flex; /* Make grid items flex to center content if needed */
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Hide overflowing parts of images */
+}
+
+/* Specific Grid Item Dimensions & Flex Properties */
+.grid-item-1-flex {
+    width: 100%;
+   
+    height: 150px;
+    background-image: url(/img/p1.jpg);
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat;  /* Fixed height for the first left image */
+}
+
+.grid-item-2-flex {
+    width: 100%;
+    height: 140px;
+    background-image: url(/img/p4.jpg);
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat;  /* Fixed height for the second left image */
+}
+
+.grid-item-3-flex {
+    width: 100%;
+    height: 150px;
+    background-image: url(/img/Homepage.jpg);
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat;  /* First middle image */
+}
+
+.grid-item-4-flex {
+    width: 100%;
+    height: 230px;
+    background-image: url(/img/heritage-background.jpg);
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat; /* Second (larger) middle image */
+}
+
+.grid-item-5-flex {
+    width: 100%;
+    height: 180px;
+    background-image: url(/img/red.jpeg);
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat;  /* Third middle image */
+}
+
+.grid-item-6-flex {
+    width: 100%;
+    height: 200px;
+    background-image: url(/img/p3.jpg);
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat;  /* Taller right image */
+}
+
+.grid-item-7-flex {
+    width: 100%;
+    height: 190px;
+    background-image: url(/img/p2.jpg);
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat;  /* Shorter right image */
+}
+
+/* Barcode Placeholder */
+.barcode-placeholder {
+    width: 100%; /* Fixed width for barcode */
+    height: 100px; /* Fixed height for barcode */
+    color: white;
+    padding: 1rem;
+    border: 1px dashed #bbb;
+     /* Pushes barcode to bottom of its column */
+    align-self: flex-start; /* Aligns barcode to the right within its column */
+}
+.barcode-placeholder p {
+    font-size: 0.9rem;
+}
+
+/* Footer Section */
+.footer-section {
+    text-align: center;
+    font-size: 0.8em;
+    color: white;
+    margin-top: 10px;
+}
+/*  
+=========================================================
+EVENT SECTION
+=========================================================
+*/
+.event {
+    background-image: url('../img/watercolor-elephant-illustration.jpg');
+    background-size: cover;
+    background: black;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    color: white;
+    order: 5;
+    
+    order: 5;
+}
+
+
+/* Buttons and card groups */
+.btn-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.btn-group .btn-card {
+    display: flex;
+    gap: 40px;
+}
+
+.btn-group .btn-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.btn-group .btn-card img {
+    width: 200px;
+    box-shadow: 18px 15px 29px 1px rgba(61, 55, 55, 0.75);
+    height: auto;
+    border-radius: 15px;
+    object-fit: cover;
+    
+}
+
+/* Slight scale difference for left and right */
+.btn-group .btn-card img:nth-child(1) {
+    scale: 0.9;
+}
+
+.btn-group .btn-card img:nth-child(3) {
+    scale: 0.9;
+}
+
+/* Buttons */
+.btn-group .btn {
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #F5F5DC;
+
+    background: rgba(255, 255, 255, 0.143);
+    backdrop-filter: blur(1.5px);
+    -webkit-backdrop-filter: blur(15px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.085);
+    transition: 0.3s;
+}
+
+.btn-group .btn:hover {
+    background: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+}
+
+/*  
+=========================================================
+INTRO TEXT WITH IMAGE-CLIP EFFECT
+=========================================================
+*/
+.in1 {
+    width: 90%;
+    height: 200px;
+    background: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-size: cover;
+    background-image: url("../img/red.jpeg");
+    -webkit-text-fill-color: transparent;
+    /* Text becomes empty */
+    -webkit-background-clip: text;
+    /* Image fills the text */
+}
+
+/* Big heading with image clip */
+
+
+/* footer-style */
+footer {
+    grid-area: footer;
+    background: #1a1a1a;
+     backdrop-filter: blur(3px);
+    color: #fff;
+    /* border-top: 5px solid gray; */
+}
+
+/* .bc{
+   background:url(/img/image1.png);
+   background-attachment: fixed;
+   background-size: cover;
+}   */
+.ft-container {
+    width: 100%;
+    height: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.ft-box {
+    width: 400px;
+    display: flex;
+    flex-flow: column wrap;
+    align-content: center;
+    justify-content: center;
+
+}
+
+.ft-box img {
+    width: 100%;
+}
+
+.ft-box ul li {
+    margin: 10px 0px;
+    list-style: none;
+}
+
+.ft-box h1 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.ft-box ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-family: "Poppins", sans-serif;
+    text-transform: capitalize;
+    font-size: 18px;
+}
+
+.copyright-text {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.copyright-logo {
+    width: 300px;
+    padding: 1rem 0;
+}
+
+.text-3 h3 {
+    font-family: "poppins", sans-serif;
+}
+
+
