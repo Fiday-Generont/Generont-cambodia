@@ -1,0 +1,10 @@
+.main-container{
+    grid-area: main;
+    height: 100vh;
+    background-image: url("/groupB/img-groupB/main2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.6;
+    background-position: center;
+    min-height: 100%;
+}

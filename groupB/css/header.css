@@ -1,0 +1,45 @@
+header {
+    grid-area: header;
+    color: white;
+    margin: auto;
+    width: 100%;
+    padding: 10px 20px;
+
+    position: fixed;
+    /* Navbar always stays on top while scrolling */
+    top: 0;
+    z-index: 1000;
+    /* Makes sure header is above everything */
+
+    display: flex;
+    justify-content: space-between;
+    /* Logo left, menu right */
+    align-items: center;
+
+    background: rgba(255, 254, 254, 0.094);
+    /* Transparent background */
+    backdrop-filter: blur(5px);
+    /* Glass effect */
+    -webkit-backdrop-filter: blur(15px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    overflow: auto;
+    /* Soft shadow */
+}
+
+/* Navigation Menu */
+header nav ul {
+    display: flex;
+    gap: 20px;
+    padding: 0px 20px;
+    list-style: none;
+    /* Removes bullets */
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: white;
+    text-shadow: #222 2px 2px 4px;
+    /* Glow text */
+    font-weight: bold;
+    font-size: clamp(0.5rem, 2vw, 1.5rem);
+}

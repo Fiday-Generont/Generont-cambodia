@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/*  
+=========================================================
+GLOBAL STYLES
+=========================================================
+*/
+
+/* declare color */
+
+* {
+    box-sizing: border-box;
+    /* Makes width/height include padding + border */
+    margin: 0;
+    /* Removes default browser margin */
+    padding: 0;
+    /* Removes default browser padding */
+    font-family: 'Arial', sans-serif;
+    /* Sets default font */
+    scroll-behavior: smooth;
+    /* Smooth scroll when clicking links */
+}
+body{
+    display: grid;
+    grid-template-areas:
+        "header"
+        "main"
+        "footer";
+    grid-template-rows: auto 1fr auto;
+    
+}
+/*  
