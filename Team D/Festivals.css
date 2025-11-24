@@ -1,0 +1,202 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    scroll-behavior: smooth;
+}
+body{
+    display: grid;
+    grid-template-areas:
+        "header"
+        "main"
+        "footer";
+    grid-template-rows: auto 1fr auto;
+
+    background-image: url(img/Angkor.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+header {
+    grid-area: header;
+    color: white;
+    margin: auto;
+    width: 100%;
+    padding: 1px 20px;
+
+    position: fixed;
+    /* Navbar always stays on top while scrolling */
+    top: 0;
+    z-index: 1000;
+    /* Makes sure header is above everything */
+
+    display: flex;
+    justify-content: space-between;
+    /* Logo left, menu right */
+    align-items: center;
+
+    background: rgba(255, 254, 254, 0.094);
+    /* Transparent background */
+    backdrop-filter: blur(5px);
+    /* Glass effect */
+    -webkit-backdrop-filter: blur(15px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    overflow: auto;
+    /* Soft shadow */
+}
+
+/* Navigation Menu */
+header nav ul {
+    display: flex;
+    gap: 20px;
+    padding: 0px 20px;
+    list-style: none;
+    /* Removes bullets */
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: white;
+    text-shadow: #222 2px 2px 4px;
+    /* Glow text */
+    font-weight: bold;
+    font-size: clamp(0.5rem, 2vw, 1.5rem);
+}
+main {
+    grid-area: main;
+    padding-top: 120px;
+}
+.title {
+    text-align: center;
+    margin-top: 140px;
+}
+.title h1 {
+    font-family: cursive;
+    font-size: 5rem;
+}
+.title p {
+    font: italic 1.2rem "Fira Sans",serif;
+    font-size: 1.2rem;
+}
+.free {
+    height: 90vh;
+}
+.content {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin: 100px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.content box {
+    background: rgba(231, 215, 179, 0.7);
+    border-radius: 15px;
+    /* box-shadow: 0 4px 8px rgba(100, 68, 68, 0.1); */
+    padding: 20px;
+    width: 500px;
+    /* font-size: 1rem; */
+    line-height: 1.5;
+}
+.content box img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+.content box h1 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+.content box:hover {
+    transform: scale(1.02);
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+}
+footer {
+    grid-area: footer;
+    background: #7e6e41;
+     backdrop-filter: blur(3px);
+    color: #fff;
+    /* border-top: 5px solid gray; */
+}
+
+/* .bc{
+   background:url(/img/image1.png);
+   background-attachment: fixed;
+   background-size: cover;
+}   */
+.ft-container {
+    width: 100%;
+    height: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.ft-box {
+    width: 400px;
+    display: flex;
+    flex-flow: column wrap;
+    align-content: center;
+    justify-content: center;
+
+}
+
+.ft-box img {
+    width: 100%;
+}
+
+.ft-box ul li {
+    margin: 10px 0px;
+    list-style: none;
+}
+
+.ft-box h1 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.ft-box ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-family: "Poppins", sans-serif;
+    text-transform: capitalize;
+    font-size: 18px;
+}
+
+.copyright-text {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.copyright-logo {
+    width: 300px;
+    padding: 1rem 0;
+}
+
+.text-3 h3 {
+    font-family: "poppins", sans-serif;
+}
+
