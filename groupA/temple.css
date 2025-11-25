@@ -1,0 +1,379 @@
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+html, body {
+    height: 100%;
+}
+
+main {
+    display: grid  ;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(7,100vh);
+}
+
+.hero-section {
+   background: url("../groupA/groupA-image/hero-background.jpg");
+   background-size: cover;
+   background-attachment: fixed;
+}
+.hero-group{
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+.hero-content{
+    padding: 60px;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.hero-content p{
+    color: white;
+    font-size: 2rem;
+    
+}
+.hero-content h1{
+   color: rgb(243, 237, 237);
+   font-size: 4rem;
+    
+}
+
+
+.hero-gallery-image{
+    width: 50%;
+}
+.hero-gallery-image .hero-image{
+    /* width: 50%;
+    height: 50%;
+    background-color: aqua; */
+}
+.hero-gallery-image .hero-image .box{
+    width: 300px;
+    height: auto;
+}
+.hero-gallery-image .hero-image .box img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* AngkorWat section */
+.angkor-section {
+  background-color: rgb(112, 110, 110);
+
+}
+.angkor-group {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    /* align-items: center; */
+}
+.angkor-text {
+    width: 50%;
+    height: 100%;
+    /* border: 1px solid black; */
+    padding: 70px;
+    text-align: justify;
+    font-size: 1.7rem;
+    /* line-height: 2.5rem; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+
+}
+.angkor-text h1 {
+    font-size: 5rem;
+    /* border: 1px solid black ; */
+    margin-bottom: 50px;
+    text-align: center;
+}
+.angkor-text p {
+    line-height: 2.5rem;
+    font-weight:bold;
+}
+
+.angkor-image {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+/* Container with mask */
+.angkor-image .image-container {
+    width: 100%; 
+    max-width: 1100px;
+    margin: 20px auto;
+
+    aspect-ratio: 2 / 3;
+
+    /* Mask */
+    -webkit-mask-image: url('../groupA/groupA-image/ink4.png');
+    mask-image: url('../groupA/groupA-image/ink4.png');
+
+    /* IMPORTANT: Make the mask fill the whole container */
+    -webkit-mask-size: cover;
+    mask-size: 115%;
+
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+
+    -webkit-mask-position: center;
+    mask-position: center;
+
+    /* Make sure the image can fully fill area */
+    overflow: hidden;
+}
+
+/* Image fills container */
+.angkor-image .image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* Bayon temple section */ 
+.bayon-section {
+  
+}
+.bayon-group {
+    display: flex;
+    flex-direction: row-reverse;
+    width: 100%;
+    height: 100%;
+    /* align-items: center; */
+}
+.bayon-text {
+    width: 50%;
+    height: 100%;
+    /* border: 1px solid black; */
+    padding: 70px;
+    text-align: justify;
+    font-size: 1.7rem;
+    /* line-height: 2.5rem; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+
+}
+.bayon-text h1 {
+    font-size: 5rem;
+    /* border: 1px solid black ; */
+    margin-bottom: 50px;
+    text-align: center;
+}
+.bayon-text p {
+    line-height: 2.5rem;
+    font-weight:bold;
+}
+
+.bayon-image {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+.bayon-image .image-container {
+    width: 90%;
+   height: auto;
+    overflow: hidden;
+    border-bottom-right-radius: 48%;
+    border-top-right-radius: 48%;
+    
+}
+.bayon-image .image-container img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+
+.taprom-section {
+  
+}  
+.taprom-group {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    /* align-items: center; */
+}
+.taprom-text {
+    width: 50%;
+    height: 100%;
+    /* border: 1px solid black; */
+    padding: 70px;
+    text-align: justify;
+    font-size: 1.7rem;
+    /* line-height: 2.5rem; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+
+}
+.taprom-text h1 {
+    font-size: 5rem;
+    /* border: 1px solid black ; */
+    margin-bottom: 50px;
+    text-align: center;
+}
+.taprom-text p {
+    line-height: 2.5rem;
+    font-weight:bold;
+}
+
+.taprom-image {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+.taprom-image .image-container {
+    width: 90%;
+   height: auto;
+    overflow: hidden;
+    border-bottom-left-radius: 48%;
+    border-top-left-radius: 48%;
+    
+}
+.taprom-image .image-container img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+
+
+
+
+.benteaysrey-section {
+
+}
+.benteaysrey-group {
+    display: flex;
+    flex-direction: row-reverse;
+    width: 100%;
+    height: 100%;
+    /* align-items: center; */
+}
+.benteaysrey-text {
+    width: 50%;
+    height: 100%;
+    /* border: 1px solid black; */
+    padding: 70px;
+    text-align: justify;
+    font-size: 1.7rem;
+    /* line-height: 2.5rem; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+
+}
+.benteaysrey-text h1 {
+    font-size: 5rem;
+    /* border: 1px solid black ; */
+    margin-bottom: 50px;
+    text-align: center;
+}
+.benteaysrey-text p {
+    line-height: 2.5rem;
+    font-weight:bold;
+}
+
+.benteaysrey-image {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+.benteaysrey-image .image-container {
+    width: 90%;
+   height: auto;
+    overflow: hidden;
+    border-bottom-right-radius: 48%;
+    border-top-right-radius: 48%;
+    
+}
+.benteaysrey-image .image-container img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+
+
+
+
+
+
+
+.vihea-section {
+   
+}
+.vihea-group {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    /* align-items: center; */
+}
+.vihea-text {
+    width: 50%;
+    height: 100%;
+    /* border: 1px solid black; */
+    padding: 70px;
+    text-align: justify;
+    font-size: 1.7rem;
+    /* line-height: 2.5rem; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+
+}
+.vihea-text h1 {
+    font-size: 5rem;
+    /* border: 1px solid black ; */
+    margin-bottom: 50px;
+    text-align: center;
+}
+.vihea-text p {
+    line-height: 2.5rem;
+    font-weight:bold;
+}
+
+.vihea-image {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+.vihea-image .image-container {
+    width: 90%;
+   height: auto;
+    overflow: hidden;
+    border-bottom-left-radius: 48%;
+    border-top-left-radius: 48%;
+    
+}
+.vihea-image .image-container img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+
+
+
+
+.end-section {
+    background-color: lightgray;
+}     
