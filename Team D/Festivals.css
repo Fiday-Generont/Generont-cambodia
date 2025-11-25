@@ -10,8 +10,9 @@ body{
     grid-template-areas:
         "header"
         "main"
+        "detail"
         "footer";
-    grid-template-rows: auto 1fr auto;
+    grid-template-rows: auto 1fr auto auto;
 
     background-image: url(img/Angkor.png);
     background-repeat: no-repeat;
@@ -21,10 +22,12 @@ body{
 header {
     grid-area: header;
     color: white;
-    margin: auto;
-    width: 100%;
-    padding: 1px 20px;
+    
+    margin: 20px 20px 0 20px;
+    width: calc(100% - 40px);
 
+    padding: 1px 20px;
+    border-radius: 10px;
     position: fixed;
     /* Navbar always stays on top while scrolling */
     top: 0;
@@ -56,16 +59,37 @@ header nav ul {
 }
 
 header nav ul li a {
+    font-family: "Gill Sans", sans-serif;
     text-decoration: none;
-    color: white;
-    text-shadow: #222 2px 2px 4px;
+    color: #000000;
+    text-shadow: #e8d8b2 2px 2px 4px;
     /* Glow text */
-    font-weight: bold;
-    font-size: clamp(0.5rem, 2vw, 1.5rem);
+    font-size: 1.3rem;
 }
+header #logo img {
+    height: 50px;
+    margin: 5px;
+    /* Logo size */
+}
+
 main {
     grid-area: main;
-    padding-top: 120px;
+    padding-top: 100px;
+}
+.detail {
+    grid-area: detail;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+}
+#picture img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    background-attachment: fixed;
 }
 .title {
     text-align: center;
@@ -113,26 +137,14 @@ main {
     transform: scale(1.02);
     transition: transform 0.3s ease-in-out;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
 }
+
+
 footer {
     grid-area: footer;
-    background: #7e6e41;
+    /* background: #7e6e41; */
      backdrop-filter: blur(3px);
-    color: #fff;
+    color: #ffffff;
     /* border-top: 5px solid gray; */
 }
 
