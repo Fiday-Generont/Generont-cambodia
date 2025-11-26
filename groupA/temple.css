@@ -1,379 +1,576 @@
-*{
-    padding: 0%;
-    margin: 0%;
+* {
+    padding: 0;
+    margin: 0;
     box-sizing: border-box;
 }
+
 html, body {
     height: 100%;
 }
 
 main {
-    display: grid  ;
+    display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(7,100vh);
+    grid-template-rows: repeat(7, 100vh);
 }
 
+/* ================================
+   HERO SECTION
+================================ */
 .hero-section {
-   background: url("../groupA/groupA-image/hero-background.jpg");
-   background-size: cover;
-   background-attachment: fixed;
+    background: url("../groupA/groupA-image/hero-background.jpg");
+    background-size: cover;
+    background-attachment: fixed;
 }
-.hero-group{
+
+.hero-group {
     display: flex;
-    width: 100%;
-    height: 100%;
-}
-.hero-content{
-    padding: 60px;
-    width: 50%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-.hero-content p{
-    color: white;
-    font-size: 2rem;
-    
-}
-.hero-content h1{
-   color: rgb(243, 237, 237);
-   font-size: 4rem;
-    
-}
-
-
-.hero-gallery-image{
-    width: 50%;
-}
-.hero-gallery-image .hero-image{
-    /* width: 50%;
-    height: 50%;
-    background-color: aqua; */
-}
-.hero-gallery-image .hero-image .box{
-    width: 300px;
-    height: auto;
-}
-.hero-gallery-image .hero-image .box img{
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-}
-
-/* AngkorWat section */
-.angkor-section {
-  background-color: rgb(112, 110, 110);
-
-}
-.angkor-group {
-    display: flex;
     width: 100%;
     height: 100%;
-    /* align-items: center; */
 }
+
+.hero-content {
+    width: 1500px;
+    height: 50%;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 5px solid white;
+    border-top: 5px solid white;
+}
+
+.hero-content p {
+    color: white;
+    font-size: 3rem;
+    text-align: justify;
+}
+
+.hero-content h1 {
+    color: rgb(243, 237, 237);
+    font-size: 5rem;
+    text-align: center;
+}
+
+/* Button */
+.hero-btn {
+    display: inline-block;
+    text-decoration: none;
+    padding: 12px 25px;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    border: 2px solid #ffffff;
+    border-radius: 5px;
+}
+
+.hero-btn:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* ================================
+   ANGKOR SECTION
+================================ */
+.angkor-section {
+    background-image: url("../img/heritage-background.jpg");
+    background-size: contain;
+    width: 100%;
+    min-height: 100vh;  /* FIXED */
+    padding: 30px;
+}
+.angkor-group{
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
 .angkor-text {
     width: 50%;
-    height: 100%;
-    /* border: 1px solid black; */
-    padding: 70px;
+    height: 100%;;
+    padding: 100px;
     text-align: justify;
-    font-size: 1.7rem;
-    /* line-height: 2.5rem; */
     display: flex;
     flex-direction: column;
     justify-content: center;
 
+    /* Glassmorphism Effect */
+    background: rgba(255, 255, 255, 0.15); /* Semi-transparent white background */
+    backdrop-filter: blur(10px);          /* Apply the frosted glass blur effect */
+    -webkit-backdrop-filter: blur(10px);  /* Vendor prefix for Safari support */
+    border-radius: 16px;                  /* Rounded corners for a modern look */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Subtle white border for highlight */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
 
-}
 .angkor-text h1 {
-    font-size: 5rem;
-    /* border: 1px solid black ; */
-    margin-bottom: 50px;
     text-align: center;
+    font-size: 6rem;
+    margin-bottom: 50px;
+    color: #ffffff;
 }
+
 .angkor-text p {
-    line-height: 2.5rem;
-    font-weight:bold;
+    font-size: 1.5rem;
+    line-height: 1.6;
+    color: #ffffff;
+    border-left: 5px solid white;
+    border-right: 5px solid white;
+    padding: 50px;
 }
 
 .angkor-image {
     width: 50%;
-    display: flex;
+    height: 100%;
+    display: flex;              /* Centers collage */
+    justify-content: center;
     align-items: center;
-    justify-content: flex-end;
+    position: relative;
 }
 
-/* Container with mask */
-.angkor-image .image-container {
-    width: 100%; 
-    max-width: 1100px;
-    margin: 20px auto;
-
-    aspect-ratio: 2 / 3;
-
-    /* Mask */
-    -webkit-mask-image: url('../groupA/groupA-image/ink4.png');
-    mask-image: url('../groupA/groupA-image/ink4.png');
-
-    /* IMPORTANT: Make the mask fill the whole container */
-    -webkit-mask-size: cover;
-    mask-size: 115%;
-
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-
-    -webkit-mask-position: center;
-    mask-position: center;
-
-    /* Make sure the image can fully fill area */
-    overflow: hidden;
+/* --- Collage Layout --- */
+.angkor-grid {
+    width: 1200px;
+    height: 83vh;
+    margin: 0;                 /* FIXED */
+    position: relative;
 }
 
-/* Image fills container */
-.angkor-image .image-container img {
+/* Large vertical rectangle */
+.img-1 {
+    width: 380px;
+    height: 500px;
+    position: absolute;
+    top: 0;
+    left: 40%;
+    transform: translateX(-50%);
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* Small square (right) */
+.img-2 {
+    width: 480px;
+    height: 300px;
+    position: absolute;
+    top: 200px;
+    right: 20px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* Horizontal rectangle (left bottom) */
+.img-3 {
+    width: 480px;
+    height: 300px;
+    position: absolute;
+    top: 520px;
+    left: 120px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* Medium vertical rectangle (bottom right) */
+.img-4 {
+     width: 380px;
+    height: 500px;
+    position: absolute;
+    bottom: 0;
+    right: 190px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* ================================
+   OTHER SECTIONS
+================================ */
+.bayon-section {
+    width: 100%;
+    height: 100vh;
+    padding: 10px;
+    background-image: url("../groupA/groupA-image/bayon-background.jpg");
+}
+.bayon-group{
     width: 100%;
     height: 100%;
-    object-fit: cover;
-}
-
-
-/* Bayon temple section */ 
-.bayon-section {
-  
-}
-.bayon-group {
     display: flex;
     flex-direction: row-reverse;
-    width: 100%;
-    height: 100%;
-    /* align-items: center; */
 }
-.bayon-text {
-    width: 50%;
-    height: 100%;
-    /* border: 1px solid black; */
-    padding: 70px;
+.bayon-text{
+     width: 50%;
+    height: 100%;;
+    padding: 100px;
     text-align: justify;
-    font-size: 1.7rem;
-    /* line-height: 2.5rem; */
     display: flex;
     flex-direction: column;
     justify-content: center;
 
-
+    /* Glassmorphism Effect */
+    background: rgba(255, 255, 255, 0.15); /* Semi-transparent white background */
+    backdrop-filter: blur(10px);          /* Apply the frosted glass blur effect */
+    -webkit-backdrop-filter: blur(10px);  /* Vendor prefix for Safari support */
+    border-radius: 16px;                  /* Rounded corners for a modern look */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Subtle white border for highlight */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 .bayon-text h1 {
-    font-size: 5rem;
-    /* border: 1px solid black ; */
-    margin-bottom: 50px;
     text-align: center;
-}
-.bayon-text p {
-    line-height: 2.5rem;
-    font-weight:bold;
+    font-size: 6rem;
+    margin-bottom: 50px;
+    color: #ffffff;
 }
 
-.bayon-image {
-    width: 50%;
+.bayon-text p {
+    font-size: 1.5rem;
+    line-height: 1.6;
+    color: #ffffff;
+    border-left: 5px solid white;
+    border-right: 5px solid white;
+    padding: 50px;
+}
+.bayon-image{
     display: flex;
+    justify-content: center;
     align-items: center;
-    justify-content: start;
+    width: 50%;
 }
 .bayon-image .image-container {
-    width: 90%;
-   height: auto;
-    overflow: hidden;
-    border-bottom-right-radius: 48%;
-    border-top-right-radius: 48%;
-    
+    /* 🔑 ESSENTIAL: Sets the coordinate system for absolutely positioned children */
+    position: relative; 
 }
 .bayon-image .image-container img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
+    width: 700px; /* Applies to all images, keeping them the same size */
+    border-radius: 50px;
+    border: 10px solid white;
 }
 
+/* Base Image - Relative to the flow */
+.image-1 {
+    position: relative;
+    z-index: 10; /* Ensures the main image is visible/on top if needed */
+}
+
+/* Second Layer - Offset to the top-left */
+.image-2 {
+    position: absolute;
+    top: -350px;   /* Move up 40px from the container's top edge */
+    left: -250px;  /* Move left 40px from the container's left edge */
+    z-index: 5;   /* Place slightly beneath image-1 */
+}
+
+/* Third Layer - Offset to the bottom-right */
+.image-3 {
+    position: absolute;
+    bottom: -350px; /* Move down 40px from the container's bottom edge */
+    right: -250px;  /* Move right 40px from the container's right edge */
+    z-index: 15;   /* Place above image-1 for a forward-facing layer */
+}
 
 .taprom-section {
-  
-}  
-.taprom-group {
-    display: flex;
+    background-image: url("../groupA/groupA-image/taprom-background.jpg");
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    padding: 10px;
+}
+.taprom-group{
     width: 100%;
     height: 100%;
-    /* align-items: center; */
+    display: flex;
 }
-.taprom-text {
-    width: 50%;
-    height: 100%;
-    /* border: 1px solid black; */
-    padding: 70px;
+.taprom-text{
+      width: 50%;
+    height: 100%;;
+    padding: 100px;
     text-align: justify;
-    font-size: 1.7rem;
-    /* line-height: 2.5rem; */
     display: flex;
     flex-direction: column;
     justify-content: center;
 
-
+    /* Glassmorphism Effect */
+    background: rgba(255, 255, 255, 0.15); /* Semi-transparent white background */
+    backdrop-filter: blur(10px);          /* Apply the frosted glass blur effect */
+    -webkit-backdrop-filter: blur(10px);  /* Vendor prefix for Safari support */
+    border-radius: 16px;                  /* Rounded corners for a modern look */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Subtle white border for highlight */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 .taprom-text h1 {
-    font-size: 5rem;
-    /* border: 1px solid black ; */
-    margin-bottom: 50px;
     text-align: center;
-}
-.taprom-text p {
-    line-height: 2.5rem;
-    font-weight:bold;
+    font-size: 6rem;
+    margin-bottom: 50px;
+    color: #ffffff;
 }
 
-.taprom-image {
-    width: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: end;
+.taprom-text p {
+    font-size: 1.5rem;
+    line-height: 1.6;
+    color: #ffffff;
+    border-left: 5px solid white;
+    border-right: 5px solid white;
+    padding: 50px;
 }
-.taprom-image .image-container {
-    width: 90%;
-   height: auto;
-    overflow: hidden;
-    border-bottom-left-radius: 48%;
-    border-top-left-radius: 48%;
+.taprom-image{
+    width: 50%;
+    
     
 }
-.taprom-image .image-container img {
+.taprom-grid{
+    padding:100px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2,auto);
+    gap: 100px;
+    height: 100%;
+}
+.taprom-image .taprom-grid .card{
     width: 100%;
     height: auto;
-    object-fit: cover;
+    border: 5px solid rgb(255, 255, 255);
+    border-top-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    overflow: hidden;
+}
+.taprom-image .taprom-grid .card img{
+    width: 100%; 
+    height: 100%;
+    object-fit: cover; 
+    /* Remove any default border-radius from the image itself 
+       so the card's border-radius is visible */
+    border-radius: 0;
+}
+.card:nth-child(4){
+    grid-column: span 3;
 }
 
-
-
-
-
+/* ================================
+   BANTEAY SREI SECTION
+================================ */
 .benteaysrey-section {
-
+    background-image: url("../groupA/groupA-image/banteaysrei-background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+    padding: 10px;
 }
-.benteaysrey-group {
-    display: flex;
-    flex-direction: row-reverse;
+.benteaysrey-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
     width: 100%;
     height: 100%;
-    /* align-items: center; */
 }
 .benteaysrey-text {
-    width: 50%;
-    height: 100%;
-    /* border: 1px solid black; */
-    padding: 70px;
+    /* 🔑 Position in Column 2 (Starts at line 2, ends at line 3) */
+    grid-column: 2 / 3; 
+    
+    /* 🔑 Position in Row 2 (Starts at line 2, ends at line 3) */
+    grid-row: 2 / 3;
+    
     text-align: justify;
-    font-size: 1.7rem;
-    /* line-height: 2.5rem; */
     display: flex;
     flex-direction: column;
     justify-content: center;
 
-
+    /* Glassmorphism Effect */
+    background: rgba(255, 255, 255, 0.15); /* Semi-transparent white background */
+    backdrop-filter: blur(2px);          /* Apply the frosted glass blur effect */
+    -webkit-backdrop-filter: blur(10px);  /* Vendor prefix for Safari support */                 /* Rounded corners for a modern look */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Subtle white border for highlight */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 .benteaysrey-text h1 {
-    font-size: 5rem;
-    /* border: 1px solid black ; */
-    margin-bottom: 50px;
     text-align: center;
+    font-size: 3rem;
+    margin-bottom: 50px;
+    color: #ffffff;
 }
 .benteaysrey-text p {
-    line-height: 2.5rem;
-    font-weight:bold;
+     font-size: 1.5rem;
+    line-height: 1.5;
+    color: #ffffff;
+    padding: 50px;
 }
-
-.benteaysrey-image {
-    width: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: start;
-}
-.benteaysrey-image .image-container {
-    width: 90%;
-   height: auto;
-    overflow: hidden;
-    border-bottom-right-radius: 48%;
-    border-top-right-radius: 48%;
-    
-}
-.benteaysrey-image .image-container img {
+.benteaysrey-card {
     width: 100%;
-    height: auto;
+    background-color: aqua;
+    overflow: hidden;
+}
+.benteaysrey-card img{
+   width: 100%;
+    height: 100%; 
     object-fit: cover;
 }
 
-
-
-
-
-
-
-
 .vihea-section {
-   
+    /* Background image will be moved to ::before pseudo-element */
+    width: 100%;
+    height: 100vh;
+    padding: 10px;
+    position: relative; /* Crucial for positioning ::before */
+    overflow: hidden;   /* Hides any blur overflow at edges */
 }
-.vihea-group {
-    display: flex;
+.vihea-section::before {
+    content: ""; /* Essential for pseudo-elements */
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    /* align-items: center; */
+    z-index: -1; /* Pushes the blurred background behind other content */
+
+    /* 🔑 Your Background Image */
+    background-image: url("../groupA/groupA-image/vihea1.jpg"); /* Replace with your actual image path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    /* 🔑 The Blur Effect */
+    filter: blur(10px); /* Adjust the pixel value for more or less blur */
+    -webkit-filter: blur(10px); /* For Safari compatibility */
+    transform: scale(1.02); /* Slight scale to prevent blurred edges from showing */
+}
+.vihea-group {
+    /* Use Flexbox to align text and image side-by-side */
+    display: flex;
+    justify-content: center; /* Center the group horizontally */
+    align-items: center;    /* Center the group vertically */
+    width: 100%;
+    height: 100%;
+    gap: 40px; /* Space between text and image */
 }
 .vihea-text {
-    width: 50%;
-    height: 100%;
-    /* border: 1px solid black; */
-    padding: 70px;
-    text-align: justify;
-    font-size: 1.7rem;
-    /* line-height: 2.5rem; */
+    width: 45%; /* Give the text block a defined width */
+    max-height: 90%;
+    padding: 40px;
+    
+    /* 🔑 Glassmorphism Effect */
+    background: rgba(0, 0, 0, 0.3); /* Slightly darker glass for contrast */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 16px; 
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5); 
+    
+    /* Text layout and styling */
     display: flex;
     flex-direction: column;
     justify-content: center;
-
-
+    text-align: justify;
 }
+
 .vihea-text h1 {
-    font-size: 5rem;
-    /* border: 1px solid black ; */
-    margin-bottom: 50px;
+    font-size: 3rem;
+    color: #fff;
     text-align: center;
-}
-.vihea-text p {
-    line-height: 2.5rem;
-    font-weight:bold;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
+.vihea-text p {
+    font-size: 1.3rem;
+    line-height: 1.5;
+    color: #e6e6e6;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+}
 .vihea-image {
-    width: 50%;
+    width: 100%; /* Give the image container a defined width */
+    height: 50%;
     display: flex;
+    justify-content: center;
     align-items: center;
-    justify-content: end;
 }
+
 .vihea-image .image-container {
-    width: 90%;
-   height: auto;
+    /* Container for styling/positioning effects */
+    width: 100%;
+    height: 50%;
+    border-radius: 16px;
     overflow: hidden;
-    border-bottom-left-radius: 48%;
-    border-top-left-radius: 48%;
-    
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
 }
+
 .vihea-image .image-container img {
+    /* 🔑 Make the image fill its container */
     width: 100%;
     height: auto;
-    object-fit: cover;
+    display: block;
+    /* Optional: Ensure the image is slightly lifted */
+    transform: scale(1.02);
+    transition: transform 0.3s ease-in-out; 
 }
 
-
-
-
-
+.vihea-image .image-container img:hover {
+    transform: scale(1.05); /* Zoom effect on hover */
+}
+/* ================================
+   END SECTION - SCENIC BANNER
+================================ */
 .end-section {
-    background-color: lightgray;
-}     
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background: url("../groupA/groupA-image/taprom-background.jpg") center/cover no-repeat;
+
+    /* Add a soft dark overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.end-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.45); /* Dark overlay */
+    backdrop-filter: blur(3px);   /* Smooth cinematic blur */
+}
+
+.end-banner {
+    position: relative;
+    z-index: 5;
+    text-align: center;
+    padding: 50px 40px;
+    width: 50%;
+    /* Glassmorphism */
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+}
+
+.end-banner h2 {
+    font-size: 3rem;
+    color: #fff;
+    margin-bottom: 65px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+}
+
+/* Back-to-Top Button */
+.back-to-top {
+    color: #fff;
+    font-size: 1.3rem;
+    text-decoration: none;
+    border: 2px solid #fff;
+    padding: 12px 25px;
+    border-radius: 10px;
+    letter-spacing: 1px;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+.back-to-top:hover {
+    background: rgba(255,255,255,0.2);
+    box-shadow: 0 0 15px rgba(255,255,255,0.4);
+    transform: translateY(-3px);
+}
